@@ -4,7 +4,14 @@ namespace QuantumRNG {
     open Microsoft.Quantum.Intrinsic;
     
     @EntryPoint()
-    operation SayHello() : Unit {
-        Message("Hello quantum world!");
+    operation GenerateRandomBit() : Result {
+        // Allocate a quibit.
+        use q = Qubit();
+
+        // Put the qubit to superposition.
+        H(q);
+
+        // Measure the qubit.
+        return M(q);
     }
 }
